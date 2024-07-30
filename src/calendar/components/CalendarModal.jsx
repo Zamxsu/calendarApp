@@ -33,6 +33,7 @@ export const CalendarModal = () => {
       closeTimeoutMS={ 200 }
     >
         <h1>Hola Mundo</h1>
+        
         <hr />
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi minus repudiandae veritatis maxime alias. Distinctio eveniet vero iste nobis laboriosam id, voluptate quis iure sit cum deserunt velit iusto excepturi!</p>
     </Modal>
