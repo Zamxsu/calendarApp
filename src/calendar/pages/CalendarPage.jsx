@@ -8,21 +8,11 @@ import { CalendarEvent, CalendarModal, Navbar } from "../";
 
 import { localizer, getMessagesES } from "../../helpers";
 import { useUiStore } from "../../hooks/useUiStore";
-
-const events = [{
-  title : 'Cum del jefe',
-  notes: 'Hay que comprar el pastel',
-  start: new Date(),
-  end: addHours( new Date(), 2 ),
-  bgColor: '#fafafa',
-  user: {
-    _id: '123',
-    name: 'Fernando'
-  }
-}]
+import { useCalendarStore } from "../../hooks/useCalendarStore";
 
 export const CalendarPage = () => {
 
+  const { events } = useCalendarStore()
   const { openDateModal } = useUiStore()
 
   const [lastView, setLastView] = useState(localStorage.getItem('lastView') || 'week' )
