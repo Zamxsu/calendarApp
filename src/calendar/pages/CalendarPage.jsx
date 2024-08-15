@@ -9,6 +9,7 @@ import { localizer, getMessagesES } from "../../helpers";
 import { useUiStore } from "../../hooks/useUiStore";
 import { useCalendarStore } from "../../hooks/useCalendarStore";
 import { FavAddNew } from "../components/FavAddNew";
+import { FavDelete } from "../components/FavDelete";
 
 export const CalendarPage = () => {
 
@@ -70,6 +71,7 @@ export const CalendarPage = () => {
 
       <CalendarModal  />
       <FavAddNew /> 
+      <FavDelete />
     </>
   );
 };
