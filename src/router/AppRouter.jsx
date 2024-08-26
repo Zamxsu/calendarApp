@@ -24,8 +24,6 @@ export const AppRouter = () => {
     
   }
 
-  //  const authStats =  'not authenticated'  //'not authenticated'
-
   return (
     <Routes>
       { 
@@ -45,5 +43,5 @@ export const AppRouter = () => {
       
       }
     </Routes>
-  );
-};
+  )
+}
