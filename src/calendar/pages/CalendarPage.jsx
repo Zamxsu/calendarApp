@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Calendar } from "react-big-calendar";
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 
@@ -13,7 +13,7 @@ import { FavDelete } from "../components/FavDelete";
 
 export const CalendarPage = () => {
 
-  const { events, setActiveEvent } = useCalendarStore()
+  const { events, setActiveEvent, startLoadingEvents } = useCalendarStore()
   const { openDateModal } = useUiStore()
 
   const [lastView, setLastView] = useState(localStorage.getItem('lastView') || 'week' )
@@ -46,6 +46,13 @@ export const CalendarPage = () => {
     localStorage.setItem('lastView', event )
     setLastView( event )
   }
+
+  useEffect(() => {
+    
+    startLoadingEvents()
+
+  }, [])
+  
 
   return (
     <>
