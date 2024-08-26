@@ -10,9 +10,11 @@ import { useUiStore } from "../../hooks/useUiStore";
 import { useCalendarStore } from "../../hooks/useCalendarStore";
 import { FavAddNew } from "../components/FavAddNew";
 import { FavDelete } from "../components/FavDelete";
+import { useAuthStore } from "../../hooks/useAuthStore";
 
 export const CalendarPage = () => {
 
+  const { user } = useAuthStore()
   const { events, setActiveEvent, startLoadingEvents } = useCalendarStore()
   const { openDateModal } = useUiStore()
 
@@ -20,8 +22,10 @@ export const CalendarPage = () => {
 
   const eventStyleGetter = ( event, start, end , isSelected ) => {
 
+    const isMyEvent = ( user.uid === event.user._id ) || ( user.uid === event.user.uid )
+
     const style = {
-      backgroundColor: '#347cf7',
+      backgroundColor: isMyEvent ? '#347cf7': '#465660',
       borderRadius: '0px',
       opacity: 0.8,
       color: 'white'
